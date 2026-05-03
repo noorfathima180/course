@@ -15,7 +15,7 @@ phases:
       - export IMAGE_TAG=latest
   build:
     commands:
-      - cd day2-microservices/student-service
+    
       - docker build -t $ECR_REPO:$IMAGE_TAG .
       - docker tag $ECR_REPO:$IMAGE_TAG $ECR_REPO:latest
   post_build:
