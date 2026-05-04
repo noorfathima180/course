@@ -19,7 +19,7 @@ courses_table = dynamodb.Table("noorcourse")
 
 
 # ------------------ HEALTH ------------------
-@app.route("/health", methods=["GET"])
+@app.route("/noor student/health", methods=["GET"])
 def health():
     return jsonify({
         "status": "ok",
@@ -28,7 +28,7 @@ def health():
 
 
 # ------------------ CREATE COURSE ------------------
-@app.route("/courses", methods=["POST"])
+@app.route("/noor student/courses", methods=["POST"])
 def create_course():
     try:
         data = request.get_json()
@@ -64,7 +64,7 @@ def create_course():
 
 
 # ------------------ GET ONE COURSE ------------------
-@app.route("/courses/<course_code>", methods=["GET"])
+@app.route("/noor student/courses/<course_code>", methods=["GET"])
 def get_course(course_code):
     try:
         resp = courses_table.get_item(Key={"code": course_code})
